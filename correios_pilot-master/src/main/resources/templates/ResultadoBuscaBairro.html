@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+<meta charset="utf8">
+<title>Busca Logradouro por Bairro</title>
+</head>
+
+<section layout:fragment="conteudo">
+	<div class="column2">
+		<div class="ctrlcontent">
+			<p th:text="${mensagem}"></p>
+
+			<table class="tmptabela">
+				<tbody>
+					<tr>
+						<th width="150">Logradouro/Nome:</th>
+						<th width="90">Bairro/Distrito:</th>
+						<th width="80">Localidade/UF:</th>
+						<th width="50">CEP:</th>
+					</tr>
+					<tr th:each="buscaLogBairroDTO: ${buscaLogBairros}">
+
+						<td th:text="${buscaLogBairroDTO.nomeLogradouro}"></td>
+
+						<td th:text="${buscaLogBairroDTO.bairroDistrito}" ></td>
+
+						<td th:text="${buscaLogBairroDTO.LocalidadeUf}"></td>
+
+						<td th:text="${buscaLogBairroDTO.cep}" ></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+</body>
+</html> 

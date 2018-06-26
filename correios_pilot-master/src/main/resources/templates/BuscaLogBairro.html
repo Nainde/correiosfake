@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+<meta charset="utf8">
+<title>Busca Logradouro por Bairro</title>
+</head>
+
+<section layout:fragment="conteudo">
+			<div class="ctrlcontent"> 
+			   <!-- column1 -->
+						<div class="column2">
+							<div class="content ">
+								<div class="tituloimagem">
+									<h3>Busca Logradouro por Bairro</h3>
+								</div>
+				<!-- inicio borda -->
+				<form name="Geral" id="Geral"
+					th:action="@{/buscaLogBairro/buscaLocalidadeporBairro/}" method="get">
+					<p>Faça suas consultas individuais de CEP, destinadas a
+						endereçamentos de objetos de correspondências a serem postadas nos
+						Correios. Os campos assinalados com (*) são obrigatórios.</p>
+					<div class="form">
+						<div class="contentform">
+						    <span> <label> UF*:<br> <select
+									requerid name="UF">
+										<option value="">Selecione</option>
+	                                       <option value="AC">AC</option>
+	                                       <option value="AL">AL</option>
+	                                       <option value="AM">AM</option>
+	                                       <option value="AP">AP</option>
+	                                       <option value="BA">BA</option>
+	                                       <option value="CE">CE</option>
+	                                       <option value="DF">DF</option>
+	                                       <option value="ES">ES</option>
+	                                       <option value="GO">GO</option>
+	                                       <option value="MA">MA</option>
+	                                       <option value="MG">MG</option>
+	                                       <option value="MS">MS</option>
+	                                       <option value="MT">MT</option>
+	                                       <option value="PA">PA</option>
+	                                       <option value="PB">PB</option>
+	                                       <option value="PE">PE</option>
+	                                       <option value="PI">PI</option>
+	                                       <option value="PR">PR</option>
+	                                       <option value="RJ">RJ</option>
+	                                       <option value="RN">RN</option>
+	                                       <option value="RS">RS</option>
+	                                       <option value="RO">RO</option>
+	                                       <option value="RR">RR</option>
+	                                       <option value="SC">SC</option>
+	                                       <option value="SE">SE</option>
+	                                       <option value="SP">SP</option>
+	                                       <option value="TO">TO</option>
+								</select>
+							</label>
+							</span>
+							<span> <label> Localidade *:                                                   
+							 <input align="left" maxlength="60" requerid name="localidade" size="60"
+									value="">
+							</label></span>
+							<span> <label> Bairro *:
+							 <input align="left" maxlength="60" requerid name="bairro" size="70"
+									value="">
+							</label></span>
+							 <p th:text="${mensagem}" style="color: #a94442" ></p>
+							</span> 
+							<div class="separator"></div>
+							<div class="btnform">
+								<input type="Submit" value="Buscar" class="btn2 float-right">
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<h4>Uso do Busca CEP</h4>
+				<p>
+					O uso deste aplicativo é restrito a consultas individuais de CEP,
+					destinadas a endereçamentos de objetos de correspondências a serem
+					postadas nos Correios. Para outras finalidades consulte o <a
+						href="http://www.correios.com.br/para-voce/correios-de-a-a-z/e-dne">e-DNE.</a>
+				</p>
+			</div>
+	
+</section>
+
+
+</body>
+</html>
